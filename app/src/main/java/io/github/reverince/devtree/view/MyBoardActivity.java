@@ -1,6 +1,7 @@
 package io.github.reverince.devtree.view;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +38,8 @@ public class MyBoardActivity extends AppCompatActivity {
 
 	BottomNavigationView bottomNavigationView;
 	GridView boardGrid;
+	View selectedView = null;
+	int lastPosition;
 	TextView taskTitleText, taskContentText;
 	ToggleButton postToggle;
 	Button submitBtn;
@@ -98,6 +102,17 @@ public class MyBoardActivity extends AppCompatActivity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			currentTaskIdx = position;
+
+			if (selectedView != null) {
+				if (cellCleared[lastPosition]) {
+					selectedView.setBackgroundColor(ContextCompat.getColor(MyBoardActivity.this, R.color.colorPrimary));
+				} else {
+					selectedView.setBackgroundColor(ContextCompat.getColor(MyBoardActivity.this, R.color.background));
+				}
+			}
+			view.setBackgroundColor(ContextCompat.getColor(MyBoardActivity.this, R.color.colorAccent));
+			selectedView = view;
+			lastPosition = position;
 
 			try {
 				taskTitleText.setText(taskTitles[position]);

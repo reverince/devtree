@@ -2,6 +2,7 @@ package io.github.reverince.devtree.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +29,10 @@ public class BoardPreviewActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     GridView boardGrid;
+    BoardGridAdapter boardGridAdapter;
     TextView taskTitleText, taskContentText;
+
+    View selectedView = null;
 
     int currentTaskIdx = 0;  // 지금 선택된 과제 번호
 
@@ -39,7 +43,7 @@ public class BoardPreviewActivity extends AppCompatActivity {
         setTitle("보드 미리보기 액티비티");  //TODO: 보드 제목 받아오기
 
         boardGrid = findViewById(R.id.grid_board);
-        BoardGridAdapter boardGridAdapter = new BoardGridAdapter(this, cellStrings, cellCleared);
+        boardGridAdapter = new BoardGridAdapter(this, cellStrings, cellCleared);
         boardGrid.setAdapter(boardGridAdapter);
         boardGrid.setOnItemClickListener(onCellClickListener);
 
@@ -50,7 +54,6 @@ public class BoardPreviewActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent intent;
                 switch (item.getItemId()) {
                     case R.id.action_board:
                         startActivity(new Intent(BoardPreviewActivity.this, MyBoardActivity.class));
@@ -92,6 +95,10 @@ public class BoardPreviewActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             currentTaskIdx = position;
+
+            if (selectedView != null) selectedView.setBackgroundColor(ContextCompat.getColor(BoardPreviewActivity.this, R.color.background));
+            view.setBackgroundColor(ContextCompat.getColor(BoardPreviewActivity.this, R.color.colorAccent));
+            selectedView = view;
 
             try {
                 taskTitleText.setText(taskTitles[position]);

@@ -46,7 +46,7 @@ public class BoardGridAdapter extends BaseAdapter {
             textView.setText(mStrings[position]);
             LinearLayout linearLayout = grid.findViewById(R.id.linear_cell);
             if (mCleared[position]) {
-                linearLayout.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorAccent));
+                linearLayout.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorPrimary));
             } else {
                 linearLayout.setBackgroundColor(ContextCompat.getColor(mContext, R.color.background));
             }
