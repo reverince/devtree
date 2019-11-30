@@ -1,4 +1,4 @@
-package io.github.reverince.devtree.view
+package io.github.reverince.devtree.data
 
 data class InProgressBoard(val boardName: String, val startDay: String, val clearTask: String, val todoTask: String)
 

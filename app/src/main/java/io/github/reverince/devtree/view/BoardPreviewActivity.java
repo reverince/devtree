@@ -1,4 +1,4 @@
-package io.github.reverince.devtree;
+package io.github.reverince.devtree.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import io.github.reverince.devtree.MainActivity;
+import io.github.reverince.devtree.R;
+import io.github.reverince.devtree.rcv.BoardAdapter;
 
 public class BoardPreviewActivity extends AppCompatActivity {
     // 테스트용 임시 데이터

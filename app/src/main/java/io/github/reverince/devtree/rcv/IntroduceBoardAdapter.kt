@@ -1,4 +1,4 @@
-package io.github.reverince.devtree.view
+package io.github.reverince.devtree.rcv
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.github.reverince.devtree.R
+import io.github.reverince.devtree.data.IntroduceBoard
 
 class IntroduceBoardAdapter(val context: Context, val list: ArrayList<IntroduceBoard>) : RecyclerView.Adapter<IntroduceBoardAdapter.Holder>() {
 

@@ -1,4 +1,4 @@
-package io.github.reverince.devtree.view
+package io.github.reverince.devtree.rcv
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.github.reverince.devtree.R
+import io.github.reverince.devtree.data.InProgressBoard
 
 
 class InProgressBoardAdapter(val context: Context, val list: ArrayList<InProgressBoard>) : RecyclerView.Adapter<InProgressBoardAdapter.Holder>() {

@@ -1,4 +1,4 @@
-package io.github.reverince.devtree;
+package io.github.reverince.devtree.view;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+
+import io.github.reverince.devtree.R;
 
 public class SubmitTaskDialogFragment extends DialogFragment {
     @NonNull
