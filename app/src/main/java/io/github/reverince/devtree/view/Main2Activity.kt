@@ -32,13 +32,11 @@ class Main2Activity : AppCompatActivity() {
 				R.id.action_board -> {
 					startActivity(Intent(this@Main2Activity, MyBoardActivity::class.java))
 					overridePendingTransition(0, 0)
-					finish()
 				}
 				R.id.action_home -> {}
 				R.id.action_profile -> {
 					startActivity(Intent(this@Main2Activity, MyPageActivity::class.java))
 					overridePendingTransition(0, 0)
-					finish()
 				}
 			}//finish();
 			//Intent intent = new Intent(MainActivity.this, ProfileActivity.class);

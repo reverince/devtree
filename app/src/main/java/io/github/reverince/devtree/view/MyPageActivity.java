@@ -102,8 +102,6 @@ public class MyPageActivity extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.action_home:
-                        startActivity(new Intent(MyPageActivity.this, Main2Activity.class));
-                        overridePendingTransition(0, 0);
                         finish();
                         break;
                     case R.id.action_profile:
