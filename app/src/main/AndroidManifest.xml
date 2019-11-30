@@ -16,6 +16,8 @@
 
         <activity android:name=".view.MyBoardActivity"></activity>
 
+        <activity android:name=".view.MyPageActivity"></activity>
+
         <activity android:name=".view.SplashActivity" android:theme="@style/SplashTheme">
 
             <intent-filter>

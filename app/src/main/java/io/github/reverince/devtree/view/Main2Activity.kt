@@ -30,13 +30,16 @@ class Main2Activity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
 			when (item.itemId) {
 				R.id.action_board -> {
-					val intent = Intent(this@Main2Activity, MyBoardActivity::class.java)
-					startActivity(intent)
+					startActivity(Intent(this@Main2Activity, MyBoardActivity::class.java))
 					overridePendingTransition(0, 0)
 					finish()
 				}
 				R.id.action_home -> {}
-				R.id.action_profile -> {}
+				R.id.action_profile -> {
+					startActivity(Intent(this@Main2Activity, MyPageActivity::class.java))
+					overridePendingTransition(0, 0)
+					finish()
+				}
 			}//finish();
 			//Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
 			true

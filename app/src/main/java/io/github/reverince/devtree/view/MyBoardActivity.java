@@ -20,9 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import io.github.reverince.devtree.MainActivity;
 import io.github.reverince.devtree.R;
-import io.github.reverince.devtree.rcv.BoardAdapter;
+import io.github.reverince.devtree.rcv.MyBoardAdapter;
 import io.github.reverince.devtree.rcv.PostRecyclerAdapter;
 
 public class MyBoardActivity extends AppCompatActivity {
@@ -53,7 +52,7 @@ public class MyBoardActivity extends AppCompatActivity {
 		setTitle("진행 중인 보드 액티비티");  //TODO: 보드 제목 받아오기
 
 		boardGrid = findViewById(R.id.grid_board);
-		boardGrid.setAdapter(new BoardAdapter(this, cellStrings));
+		boardGrid.setAdapter(new MyBoardAdapter(this, cellStrings));
 		boardGrid.setOnItemClickListener(onCellClickListener);
 
 		taskTitleText = findViewById(R.id.text_task_title);
@@ -80,14 +79,14 @@ public class MyBoardActivity extends AppCompatActivity {
 						overridePendingTransition(0, 0);
 						break;
 					case R.id.action_home:
-						Intent intent = new Intent(MyBoardActivity.this, Main2Activity.class);
-						startActivity(intent);
+						startActivity(new Intent(MyBoardActivity.this, Main2Activity.class));
 						overridePendingTransition(0, 0);
 						finish();
 						break;
 					case R.id.action_profile:
-						//Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+						startActivity(new Intent(MyBoardActivity.this, MyPageActivity.class));
 						overridePendingTransition(0, 0);
+						finish();
 						break;
 				}
 				return true;
