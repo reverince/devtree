@@ -5,17 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import io.github.reverince.devtree.R;
 
 public class BoardGridAdapter extends BaseAdapter {
-    private Context mContext;
-    private final String[] mStrings;
+    Context mContext;
+    final String[] mStrings;
+    final boolean[] mCleared;
 
-    public BoardGridAdapter(Context context, String[] strings) {
+    public BoardGridAdapter(Context context, String[] strings, boolean[] cleared) {
         mContext = context;
         mStrings = strings;
+        mCleared = cleared;
     }
 
     @Override
@@ -39,6 +44,12 @@ public class BoardGridAdapter extends BaseAdapter {
             grid = inflater.inflate(R.layout.grid_board, null);
             TextView textView = grid.findViewById(R.id.text_task);
             textView.setText(mStrings[position]);
+            LinearLayout linearLayout = grid.findViewById(R.id.linear_cell);
+            if (mCleared[position]) {
+                linearLayout.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorAccent));
+            } else {
+                linearLayout.setBackgroundColor(ContextCompat.getColor(mContext, R.color.background));
+            }
         } else {
             grid = convertView;
         }

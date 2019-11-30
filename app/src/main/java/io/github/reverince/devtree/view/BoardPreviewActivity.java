@@ -22,6 +22,7 @@ import io.github.reverince.devtree.rcv.BoardGridAdapter;
 public class BoardPreviewActivity extends AppCompatActivity {
     // 테스트용 임시 데이터
     final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii" };
+    final boolean[] cellCleared = { false, false, false, false, false, false, false, false, false };
     final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06" };
     final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명" };
 
@@ -38,7 +39,7 @@ public class BoardPreviewActivity extends AppCompatActivity {
         setTitle("보드 미리보기 액티비티");  //TODO: 보드 제목 받아오기
 
         boardGrid = findViewById(R.id.grid_board);
-        BoardGridAdapter boardGridAdapter = new BoardGridAdapter(this, cellStrings);
+        BoardGridAdapter boardGridAdapter = new BoardGridAdapter(this, cellStrings, cellCleared);
         boardGrid.setAdapter(boardGridAdapter);
         boardGrid.setOnItemClickListener(onCellClickListener);
 
