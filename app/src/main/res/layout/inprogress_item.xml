@@ -1,75 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@color/background"
-	android:orientation="horizontal"
-	android:padding="5dp"
-	android:layout_marginHorizontal="10dp"
-	android:layout_marginVertical="5dp"
-	android:layout_width="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:background="@drawable/outline"
+	android:layout_margin="5dp"
+	android:orientation="vertical" android:layout_width="match_parent"
 	android:layout_height="wrap_content">
 
-	<ImageView
-		android:id="@+id/image_theme"
-		android:src="@drawable/common_google_signin_btn_icon_dark"
-		android:layout_width="100dp"
-		android:layout_height="match_parent"/>
-
-	<LinearLayout
-		android:layout_width="match_parent"
+	<TextView
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:orientation="vertical">
+		android:text="안드로이드 기초보드"
+		android:textColor="#000"
+		android:id="@+id/boardNameTextVIew"/>
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="안드로이드 기초"
-			android:textSize="30sp"
-			android:id="@+id/boardNameTextVIew"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="시작일 : 2019.11.29"
+		android:textColor="#000"
+		android:id="@+id/startDayTextView"/>
 
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-			android:gravity="right">
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="시작일 : "/>
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="2019. 11. 29."
-				android:textSize="20sp"
-				android:id="@+id/startDayTextView"/>
-		</LinearLayout>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textColor="#000"
+		android:id="@+id/clearBoardTextVIew"
+		android:text="달성한 주제 : 1개"
+		/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="남은 주제 : 1개"
+		android:textColor="#000"
+		android:id="@+id/todoTaskTextView"
+		/>
 
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-			android:gravity="right">
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="달성한 과제 : "/>
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="5"
-				android:textSize="20sp"
-				android:id="@+id/clearBoardTextVIew"/>
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text=" / "/>
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="6"
-				android:textSize="20sp"
-				android:id="@+id/totalTaskTextView"/>
-		</LinearLayout>
-
-	</LinearLayout>
 
 </LinearLayout>

@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@color/background"
-	android:orientation="horizontal"
-	android:padding="5dp"
-	android:layout_marginHorizontal="10dp"
-	android:layout_marginVertical="5dp"
-	android:layout_width="match_parent"
+	android:orientation="horizontal" android:layout_width="wrap_content"
+	android:background="@drawable/outline"
+	android:id="@+id/parentLayout"
+	android:layout_margin="5dp"
 	android:layout_height="wrap_content">
 
 	<ImageView
-		android:id="@+id/image_theme"
-		android:src="@drawable/common_google_signin_btn_icon_dark"
 		android:layout_width="100dp"
-		android:layout_height="match_parent"/>
+		android:layout_height="100dp"
+		android:id="@+id/imageView"
+		android:src="@drawable/ic_launcher_foreground"/>
 
 	<LinearLayout
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center"
 		android:layout_height="wrap_content"
 		android:orientation="vertical">
 
 		<TextView
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="안드로이드 기초"
-			android:textSize="30sp"
-			android:id="@+id/text_introduce_title"/>
+			android:id="@+id/boardNameTextVIew"
+			android:textColor="#000"
+			android:text="보드명"/>
+
 		<TextView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:text="DESCRIPTION HERE DESC RIP TION HERE DES CRIPT ION HERE"
-		android:textSize="20sp"
-		android:gravity="right"
-		android:id="@+id/text_introduce_description"/>
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/boardDescriptionTextView"
+			android:textColor="#000"
+			android:text="보드설명"/>
 
 	</LinearLayout>
-
 
 </LinearLayout>
