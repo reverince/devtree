@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
@@ -33,15 +32,16 @@ import io.github.reverince.devtree.rcv.PostRecyclerAdapter;
 public class MyBoardActivity extends AppCompatActivity {
 	// 테스트용 임시 데이터
 	final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii" };
-	final boolean[] cellCleared = { false, true, true, true, false, false, false, true, false };
-	final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06" };
-	final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명" };
+	public static boolean[] cellCleared = { false, true, true, true, false, false, false, true, false };
+	final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06", "과제 07", "과제 08", "과제 09" };
+	final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명", "08 설명", "08 설명", "09 설명" };
 	public static List<String> postAuthors = new ArrayList<>();
 	public static List<String> postContents = new ArrayList<>();
 	public static List<String> postLinks = new ArrayList<>();
 
 	BottomNavigationView bottomNavigationView;
 	GridView boardGrid;
+	public static BoardGridAdapter boardGridAdapter;
 	View selectedView = null;
 	int lastPosition;
 	TextView taskTitleText, taskContentText;
@@ -52,7 +52,7 @@ public class MyBoardActivity extends AppCompatActivity {
 	public static RecyclerView.Adapter postRecyclerViewAdapter;
 	RecyclerView.LayoutManager postRecyclerViewLayoutManager;
 
-	int currentTaskIdx = 0;  // 지금 선택된 과제 번호
+	public static int currentTaskIdx = 0;  // 지금 선택된 과제 번호
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,7 @@ public class MyBoardActivity extends AppCompatActivity {
 		postLinks.add("https://line.me");
 
 		boardGrid = findViewById(R.id.grid_board);
-		BoardGridAdapter boardGridAdapter = new BoardGridAdapter(this, cellStrings, cellCleared);
+		boardGridAdapter = new BoardGridAdapter(this, cellStrings, cellCleared);
 		boardGrid.setAdapter(boardGridAdapter);
 		boardGrid.setOnItemClickListener(onCellClickListener);
 

@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import io.github.reverince.devtree.R;
+import io.github.reverince.devtree.data.Post;
 
 public class SubmitTaskDialogFragment extends DialogFragment {
     @NonNull
@@ -36,6 +37,9 @@ public class SubmitTaskDialogFragment extends DialogFragment {
                         MyBoardActivity.postContents.add(0, description);
                         MyBoardActivity.postLinks.add(0, link);
                         MyBoardActivity.postRecyclerViewAdapter.notifyDataSetChanged();
+                        MyBoardActivity.cellCleared[MyBoardActivity.currentTaskIdx] = true;
+                        MyBoardActivity.boardGridAdapter.notifyDataSetChanged();
+                        MyPageActivity.postList.add(0, new Post("null", description, link));
                     }
                 })
                 .setNegativeButton("취소", new DialogInterface.OnClickListener() {

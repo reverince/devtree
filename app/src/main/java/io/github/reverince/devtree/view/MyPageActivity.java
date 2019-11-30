@@ -36,8 +36,7 @@ public class MyPageActivity extends AppCompatActivity {
     private TextView mTextNumberOfClearBoard;
     private TextView mTextNumberOfTaskValue;
     private TextView mTextStackName;
-    private List<Post> postList = new ArrayList<>();
-    private List<String> linkList = new ArrayList<>();
+    public static List<Post> postList = new ArrayList<>();
     private List<Board> boardList = new ArrayList<>();
     private FirebaseFirestore db;
 

@@ -76,7 +76,7 @@ class Main2Activity : AppCompatActivity() {
 
 		inProgressBoardAdapter.setItemClickListener(object : InProgressBoardAdapter.ItemClickListener {
 			override fun onClick(list: ArrayList<InProgressBoard>, view: View, position: Int) {
-				Toast.makeText(this@Main2Activity, "${list[position]}", Toast.LENGTH_SHORT).show()
+				//Toast.makeText(this@Main2Activity, "${list[position]}", Toast.LENGTH_SHORT).show()
 				val intent = Intent(this@Main2Activity, MyBoardActivity::class.java)
 				startActivity(intent)
 			}
@@ -96,7 +96,7 @@ class Main2Activity : AppCompatActivity() {
 
 		introduceBoardAdapter.setItemClickListener(object : IntroduceBoardAdapter.ItemClickListener {
 			override fun onClick(list: ArrayList<IntroduceBoard>, view: View, position: Int) {
-				Toast.makeText(this@Main2Activity, "${list[position]}", Toast.LENGTH_SHORT).show()
+				//Toast.makeText(this@Main2Activity, "${list[position]}", Toast.LENGTH_SHORT).show()
 				val current : Date = Calendar.getInstance().time
 				val date : String = SimpleDateFormat("yyyy.MM.dd",Locale.getDefault()).format(current)
 				val clearTask = 0
