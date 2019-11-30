@@ -4,15 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import io.github.reverince.devtree.InProgressBoard
+import io.github.reverince.devtree.IntroduceBoard
 import io.github.reverince.devtree.R
 
+class IntroduceBoardAdapter(val context: Context, val list: ArrayList<IntroduceBoard>) : RecyclerView.Adapter<IntroduceBoardAdapter.Holder>() {
 
-class InProgressBoardAdapter(val context: Context, val list: ArrayList<InProgressBoard>) : RecyclerView.Adapter<InProgressBoardAdapter.Holder>() {
 	interface ItemClickListener {
-		fun onClick(list: ArrayList<InProgressBoard>, view: View, position: Int)
+		fun onClick(list: ArrayList<IntroduceBoard>, view: View, position: Int)
 	}
 
 	private lateinit var itemClickListener: ItemClickListener
@@ -22,7 +23,7 @@ class InProgressBoardAdapter(val context: Context, val list: ArrayList<InProgres
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-		val view = LayoutInflater.from(context).inflate(R.layout.inprogress_item, parent, false)
+		val view = LayoutInflater.from(context).inflate(R.layout.introduce_item, parent, false)
 		return Holder(view)
 	}
 
@@ -31,21 +32,19 @@ class InProgressBoardAdapter(val context: Context, val list: ArrayList<InProgres
 	}
 
 	override fun onBindViewHolder(holder: Holder, position: Int) {
-		holder.bind(list[position], position)
+		holder.bind(list[position], position, context)
 	}
 
-	inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-		//		var view = hol
-		val boardNameTextView: TextView = itemView.findViewById(R.id.boardNameTextVIew)
-		val startDayTextView: TextView = itemView.findViewById(R.id.startDayTextView)
-		val clearTaskTextView: TextView = itemView.findViewById(R.id.clearBoardTextVIew)
-		val todoTaskTextView: TextView = itemView.findViewById(R.id.todoTaskTextView)
 
-		fun bind(inProgressBoard: InProgressBoard, position: Int) {
-			boardNameTextView.text = inProgressBoard.boardName
-			startDayTextView.text = inProgressBoard.startDay
-			clearTaskTextView.text = inProgressBoard.clearTask
-			todoTaskTextView.text = inProgressBoard.todoTask
+	inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+		val imageView: ImageView = itemView.findViewById(R.id.imageView)
+		val boardNameTextView: TextView = itemView.findViewById(R.id.boardNameTextVIew)
+		val boardDescription: TextView = itemView.findViewById(R.id.boardDescriptionTextView)
+
+		fun bind(introduceBoard: IntroduceBoard, position: Int, context: Context) {
+			imageView.setImageResource(introduceBoard.image)
+			boardNameTextView.text = introduceBoard.boardName
+			boardDescription.text = introduceBoard.boardDescription
 
 			itemView.setOnClickListener {
 				itemClickListener.onClick(list, it, position)
