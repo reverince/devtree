@@ -24,9 +24,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MyBoardActivity extends AppCompatActivity {
     // 테스트용 임시 데이터
-    final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff" };
-    final String[] taskTitles = { "과제 01", "과제 02", "과제 03" };
-    final String[] taskContents = { "01 ", "02 ", "03 " };
+    final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii" };
+    final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06" };
+    final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명" };
     final String[] postAuthors = { "홍길동", "유튜버", "라인", "구름" };
     final String[] postContents = { "dasas dasdkoasp dow kdp", "adk wapdakw odaw kdp", "awpkpvoe peoap domapo dmdpw", "awodka pwd okwd" };
     final String[] postLinks = { "https://goorm.edu", "https://naver.com", "https://google.com", "https://youtube.com" };
@@ -50,7 +50,8 @@ public class MyBoardActivity extends AppCompatActivity {
         setTitle("진행 중인 보드 액티비티");  //TODO: 보드 제목 받아오기
 
         boardGrid = findViewById(R.id.grid_board);
-        boardGrid.setAdapter(new BoardAdapter(this, cellStrings));
+        BoardGridAdapter boardGridAdapter = new BoardGridAdapter(this, cellStrings);
+        boardGrid.setAdapter(boardGridAdapter);
         boardGrid.setOnItemClickListener(onCellClickListener);
 
         taskTitleText = findViewById(R.id.text_task_title);

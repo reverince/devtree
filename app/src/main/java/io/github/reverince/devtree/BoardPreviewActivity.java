@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,9 +18,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BoardPreviewActivity extends AppCompatActivity {
     // 테스트용 임시 데이터
-    final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff" };
-    final String[] titles = { "과제 01", "과제 02", "과제 03" };
-    final String[] contents = { "01 ", "02 ", "03 " };
+    final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii" };
+    final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06" };
+    final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명" };
 
     BottomNavigationView bottomNavigationView;
     GridView boardGrid;
@@ -34,7 +35,8 @@ public class BoardPreviewActivity extends AppCompatActivity {
         setTitle("보드 미리보기 액티비티");  //TODO: 보드 제목 받아오기
 
         boardGrid = findViewById(R.id.grid_board);
-        boardGrid.setAdapter(new BoardAdapter(this, cellStrings));
+        BoardGridAdapter boardGridAdapter = new BoardGridAdapter(this, cellStrings);
+        boardGrid.setAdapter(boardGridAdapter);
         boardGrid.setOnItemClickListener(onCellClickListener);
 
         taskTitleText = findViewById(R.id.text_task_title);
@@ -65,14 +67,31 @@ public class BoardPreviewActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar_board_preview, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                //TODO: 진행 중인 보드에 지금 보드 추가
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
     private AdapterView.OnItemClickListener onCellClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             currentTaskIdx = position;
             Toast.makeText(BoardPreviewActivity.this, ""+position, Toast.LENGTH_SHORT).show();
             try {
-                taskTitleText.setText(titles[position]);
-                taskContentText.setText(contents[position]);
+                taskTitleText.setText(taskTitles[position]);
+                taskContentText.setText(taskContents[position]);
             }
             catch (ArrayIndexOutOfBoundsException e) {
                 Log.e(this.toString(), "ArrayIndexOutOfBoundsException");
