@@ -1,16 +1,19 @@
 package io.github.reverince.devtree.rcv;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class MyBoardAdapter extends BaseAdapter {
-    private Context mContext;
-    private String[] mStrings;
+import io.github.reverince.devtree.R;
 
-    public MyBoardAdapter(Context context, String[] strings) {
+public class BoardGridAdapter extends BaseAdapter {
+    private Context mContext;
+    private final String[] mStrings;
+
+    public BoardGridAdapter(Context context, String[] strings) {
         mContext = context;
         mStrings = strings;
     }
@@ -29,15 +32,18 @@ public class MyBoardAdapter extends BaseAdapter {
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView textView;
-        if (convertView == null) {
-            textView = new TextView(mContext);
-        }
-        else {
-            textView = (TextView)convertView;
-        }
-        textView.setText(mStrings[position]);
+        View grid;
+        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        return textView;
+        if (convertView == null) {
+            grid = inflater.inflate(R.layout.grid_board, null);
+            TextView textView = grid.findViewById(R.id.text_task);
+            textView.setText(mStrings[position]);
+        } else {
+            grid = convertView;
+        }
+
+        return grid;
     }
+
 }
