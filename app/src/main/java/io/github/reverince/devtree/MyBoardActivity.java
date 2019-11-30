@@ -77,8 +77,6 @@ public class MyBoardActivity extends AppCompatActivity {
                     case R.id.action_board:
                         break;
                     case R.id.action_home:
-                        Intent intent = new Intent(MyBoardActivity.this, MainActivity.class);
-                        startActivity(intent);
                         finish();
                         break;
                     case R.id.action_profile:

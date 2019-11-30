@@ -54,8 +54,6 @@ public class BoardPreviewActivity extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.action_home:
-                        intent = new Intent(BoardPreviewActivity.this, MainActivity.class);
-                        startActivity(intent);
                         finish();
                         break;
                     case R.id.action_profile:
