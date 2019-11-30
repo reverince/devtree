@@ -23,6 +23,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.github.reverince.devtree.R;
 import io.github.reverince.devtree.rcv.BoardGridAdapter;
 import io.github.reverince.devtree.rcv.PostRecyclerAdapter;
@@ -33,9 +36,9 @@ public class MyBoardActivity extends AppCompatActivity {
 	final boolean[] cellCleared = { false, true, true, true, false, false, false, true, false };
 	final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06" };
 	final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명" };
-	final String[] postAuthors = {"홍길동", "유튜버", "라인", "구름"};
-	final String[] postContents = {"dasas dasdkoasp dow kdp", "adk wapdakw odaw kdp", "awpkpvoe peoap domapo dmdpw", "awodka pwd okwd"};
-	final String[] postLinks = {"https://goorm.edu", "https://naver.com", "https://google.com", "https://youtube.com"};
+	public static List<String> postAuthors = new ArrayList<>();
+	public static List<String> postContents = new ArrayList<>();
+	public static List<String> postLinks = new ArrayList<>();
 
 	BottomNavigationView bottomNavigationView;
 	GridView boardGrid;
@@ -46,7 +49,7 @@ public class MyBoardActivity extends AppCompatActivity {
 	Button submitBtn;
 
 	RecyclerView postRecyclerView;
-	RecyclerView.Adapter postRecyclerViewAdapter;
+	public static RecyclerView.Adapter postRecyclerViewAdapter;
 	RecyclerView.LayoutManager postRecyclerViewLayoutManager;
 
 	int currentTaskIdx = 0;  // 지금 선택된 과제 번호
@@ -56,6 +59,19 @@ public class MyBoardActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_board);
 		setTitle("진행 중인 보드 액티비티");  //TODO: 보드 제목 받아오기
+
+		postAuthors.add("홍길동");
+		postContents.add("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ");
+		postLinks.add("https://goorm.edu");
+		postAuthors.add("유튜버");
+		postContents.add("the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make");
+		postLinks.add("https://naver.com");
+		postAuthors.add("라인");
+		postContents.add("a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially");
+		postLinks.add("https://nhn.com");
+		postAuthors.add("구름");
+		postContents.add("unchanged. It was popularised in the 1960s with the release");
+		postLinks.add("https://line.me");
 
 		boardGrid = findViewById(R.id.grid_board);
 		BoardGridAdapter boardGridAdapter = new BoardGridAdapter(this, cellStrings, cellCleared);

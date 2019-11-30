@@ -10,10 +10,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import io.github.reverince.devtree.R;
 
 public class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapter.RecyclerViewHolder> {
-    private String[] mAuthors, mContents, mLinks;
+    private List<String> mAuthors, mContents, mLinks;
 
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         public TextView authorText, contentText;
@@ -26,7 +28,7 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapte
             linearLayout = v.findViewById(R.id.linear_post);
         }
     }
-    public PostRecyclerAdapter(String[] author, String[] content, String[] link) {
+    public PostRecyclerAdapter(List<String> author, List<String> content, List<String> link) {
         mAuthors = author;
         mContents = content;
         mLinks = link;
@@ -40,12 +42,12 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapte
     }
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, final int position) {
-        holder.authorText.setText(mAuthors[position]);
-        holder.contentText.setText(mContents[position]);
+        holder.authorText.setText(mAuthors.get(position));
+        holder.contentText.setText(mContents.get(position));
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mLinks[position]));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mLinks.get(position)));
                 view.getContext().startActivity(browserIntent);
             }
         });
@@ -53,7 +55,7 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        return mAuthors.length;
+        return mAuthors.size();
     }
 
 }

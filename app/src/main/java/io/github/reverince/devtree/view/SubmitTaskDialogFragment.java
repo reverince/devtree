@@ -32,6 +32,10 @@ public class SubmitTaskDialogFragment extends DialogFragment {
                         String link = linkEdit.getText().toString();
                         String description = descriptionEdit.getText().toString();
                         //TODO: 제출
+                        MyBoardActivity.postAuthors.add(0, "나");
+                        MyBoardActivity.postContents.add(0, description);
+                        MyBoardActivity.postLinks.add(0, link);
+                        MyBoardActivity.postRecyclerViewAdapter.notifyDataSetChanged();
                     }
                 })
                 .setNegativeButton("취소", new DialogInterface.OnClickListener() {
