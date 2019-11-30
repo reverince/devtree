@@ -1,7 +1,6 @@
 package io.github.reverince.devtree.view;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -31,7 +30,7 @@ import io.github.reverince.devtree.rcv.PostRecyclerAdapter;
 
 public class MyBoardActivity extends AppCompatActivity {
 	// 테스트용 임시 데이터
-	final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii" };
+	final String[] cellStrings = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06", "과제 07", "과제 08", "과제 09" };
 	public static boolean[] cellCleared = { false, true, true, true, false, false, false, true, false };
 	final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06", "과제 07", "과제 08", "과제 09" };
 	final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명", "08 설명", "08 설명", "09 설명" };
