@@ -51,17 +51,19 @@ public class BoardPreviewActivity extends AppCompatActivity {
                 Intent intent;
                 switch (item.getItemId()) {
                     case R.id.action_board:
-                        intent = new Intent(BoardPreviewActivity.this, MyBoardActivity.class);
-                        startActivity(intent);
+                        startActivity(new Intent(BoardPreviewActivity.this, MyBoardActivity.class));
+                        overridePendingTransition(0, 0);
                         finish();
                         break;
                     case R.id.action_home:
-                        intent = new Intent(BoardPreviewActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        startActivity(new Intent(BoardPreviewActivity.this, Main2Activity.class));
+                        overridePendingTransition(0, 0);
                         finish();
                         break;
                     case R.id.action_profile:
-                        //intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        startActivity(new Intent(BoardPreviewActivity.this, MyPageActivity.class));
+                        overridePendingTransition(0, 0);
+                        finish();
                         break;
                 }
                 return true;
