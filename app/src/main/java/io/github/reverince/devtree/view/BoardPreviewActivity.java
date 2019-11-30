@@ -91,7 +91,7 @@ public class BoardPreviewActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             currentTaskIdx = position;
-            Toast.makeText(BoardPreviewActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+
             try {
                 taskTitleText.setText(taskTitles[position]);
                 taskContentText.setText(taskContents[position]);

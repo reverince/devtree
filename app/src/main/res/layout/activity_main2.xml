@@ -32,8 +32,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="시작 가능한 코스"
-			android:textAppearance="@style/TextAppearance.AppCompat.Large"
-			android:textColor="#000" />
+			android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 		<androidx.recyclerview.widget.RecyclerView
 			android:id="@+id/IntroduceBoardRecyclerview"
@@ -44,8 +43,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="진행중인 보드"
-			android:textAppearance="@style/TextAppearance.AppCompat.Large"
-			android:textColor="#000" />
+			android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
 		<androidx.recyclerview.widget.RecyclerView
 			android:id="@+id/inProgressRecyclerview"

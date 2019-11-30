@@ -38,7 +38,7 @@ class InProgressBoardAdapter(val context: Context, val list: ArrayList<InProgres
 		val boardNameTextView: TextView = itemView.findViewById(R.id.boardNameTextVIew)
 		val startDayTextView: TextView = itemView.findViewById(R.id.startDayTextView)
 		val clearTaskTextView: TextView = itemView.findViewById(R.id.clearBoardTextVIew)
-		val todoTaskTextView: TextView = itemView.findViewById(R.id.todoTaskTextView)
+		val todoTaskTextView: TextView = itemView.findViewById(R.id.totalTaskTextView)
 
 		fun bind(inProgressBoard: InProgressBoard, position: Int) {
 			boardNameTextView.text = inProgressBoard.boardName

@@ -52,17 +52,17 @@ class Main2Activity : AppCompatActivity() {
 	private fun setInProgressBoardAdapter(){
 		// 진행중인 보드
 		val inProgressBoardViewList = arrayListOf(
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
-				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개")
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6"),
+				InProgressBoard("안드로이드 기초보드", "2019.11.29", "5", "6")
 		)
 		val inProgressBoardAdapter = InProgressBoardAdapter(this, inProgressBoardViewList)
 		inProgressRecyclerview.adapter = inProgressBoardAdapter
@@ -83,10 +83,10 @@ class Main2Activity : AppCompatActivity() {
 		// 코스 소개
 		val introduceBoardList: ArrayList<IntroduceBoard> = arrayListOf(
 				IntroduceBoard(R.drawable.ic_adb_black_24dp, "안드로이드 레이아웃", "여러 레이아웃을 다룸"),
-				IntroduceBoard(R.drawable.ic_launcher_background, "aa", "aa"),
+				IntroduceBoard(R.drawable.ic_launcher_background, "aa", "ㅁㄴㅇ ㅁㄴㅇ ㅁㄴㅇ ㅁㄴㅇ ㄴㅁㅇ ㅁㄴㅇaa"),
 				IntroduceBoard(R.drawable.ic_launcher_foreground, "aa", "aa"),
 				IntroduceBoard(R.drawable.ic_adb_black_24dp, "aa", "aa"),
-				IntroduceBoard(R.drawable.ic_adb_black_24dp, "aa", "aa"),
+				IntroduceBoard(R.drawable.ic_adb_black_24dp, "aa", "aㄴㄷㄱ ㄷㄱ ㄴㄷㄱ ㄷㄱ ㄷ ㄱㄷㄱ ㄴㄷㄱ ㄷㄴa"),
 				IntroduceBoard(R.drawable.ic_adb_black_24dp, "aa", "aa"),
 				IntroduceBoard(R.drawable.ic_adb_black_24dp, "aa", "aa"),
 				IntroduceBoard(R.drawable.ic_adb_black_24dp, "aa", "aa"),

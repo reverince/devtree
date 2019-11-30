@@ -37,9 +37,9 @@ class IntroduceBoardAdapter(val context: Context, val list: ArrayList<IntroduceB
 
 
 	inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-		val imageView: ImageView = itemView.findViewById(R.id.imageView)
-		val boardNameTextView: TextView = itemView.findViewById(R.id.boardNameTextVIew)
-		val boardDescription: TextView = itemView.findViewById(R.id.boardDescriptionTextView)
+		val imageView: ImageView = itemView.findViewById(R.id.image_theme)
+		val boardNameTextView: TextView = itemView.findViewById(R.id.text_introduce_title)
+		val boardDescription: TextView = itemView.findViewById(R.id.text_introduce_description)
 
 		fun bind(introduceBoard: IntroduceBoard, position: Int, context: Context) {
 			imageView.setImageResource(introduceBoard.image)
