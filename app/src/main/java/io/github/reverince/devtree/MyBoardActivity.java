@@ -2,6 +2,7 @@ package io.github.reverince.devtree;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -92,7 +93,7 @@ public class MyBoardActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             currentTaskIdx = position;
-            Toast.makeText(MyBoardActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+
             try {
                 taskTitleText.setText(taskTitles[position]);
                 taskContentText.setText(taskContents[position]);
@@ -119,6 +120,9 @@ public class MyBoardActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             //TODO: 다이얼로그
+            FragmentManager fm = getSupportFragmentManager();
+            SubmitTaskDialogFragment submitTaskDialogFragment = new SubmitTaskDialogFragment();
+            submitTaskDialogFragment.show(fm, this.toString());
         }
     };
 
