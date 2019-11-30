@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import io.github.reverince.devtree.IntroduceBoard
 import io.github.reverince.devtree.R
 
 class IntroduceBoardAdapter(val context: Context, val list: ArrayList<IntroduceBoard>) : RecyclerView.Adapter<IntroduceBoardAdapter.Holder>() {

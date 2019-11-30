@@ -5,8 +5,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import io.github.reverince.devtree.InProgressBoard
-import io.github.reverince.devtree.IntroduceBoard
 import io.github.reverince.devtree.R
 import kotlinx.android.synthetic.main.activity_main2.*
 

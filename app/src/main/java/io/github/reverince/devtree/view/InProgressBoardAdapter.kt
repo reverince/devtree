@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import io.github.reverince.devtree.InProgressBoard
 import io.github.reverince.devtree.R
 
 
@@ -35,7 +34,6 @@ class InProgressBoardAdapter(val context: Context, val list: ArrayList<InProgres
 	}
 
 	inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-		//		var view = hol
 		val boardNameTextView: TextView = itemView.findViewById(R.id.boardNameTextVIew)
 		val startDayTextView: TextView = itemView.findViewById(R.id.startDayTextView)
 		val clearTaskTextView: TextView = itemView.findViewById(R.id.clearBoardTextVIew)
