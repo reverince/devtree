@@ -1,4 +1,4 @@
-package io.github.reverince.devtree;
+package io.github.reverince.devtree.rcv;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +7,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapter.RecyclerViewHolder> {
+import io.github.reverince.devtree.R;
+
+public class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapter.RecyclerViewHolder> {
     private String[] mAuthors, mContents, mLinks;
 
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {

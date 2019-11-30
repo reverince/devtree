@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.reverince.devtree">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
+
+        <activity android:name=".view.Main2Activity"></activity>
+
+        <activity android:name=".view.MyBoardActivity"></activity>
+
+        <activity android:name=".view.MyPageActivity"></activity>
+
+        <activity android:name=".view.SplashActivity" android:theme="@style/SplashTheme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,8 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".BoardPreviewActivity" />
-        <activity android:name=".MyBoardActivity" />
+        <activity android:name=".view.BoardPreviewActivity" />
     </application>
 
 </manifest>

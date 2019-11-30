@@ -1,4 +1,4 @@
-package io.github.reverince.devtree;
+package io.github.reverince.devtree.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import io.github.reverince.devtree.MainActivity;
+import io.github.reverince.devtree.R;
+import io.github.reverince.devtree.rcv.MyBoardAdapter;
 
 public class BoardPreviewActivity extends AppCompatActivity {
     // 테스트용 임시 데이터
@@ -34,7 +38,7 @@ public class BoardPreviewActivity extends AppCompatActivity {
         setTitle("보드 미리보기 액티비티");  //TODO: 보드 제목 받아오기
 
         boardGrid = findViewById(R.id.grid_board);
-        boardGrid.setAdapter(new BoardAdapter(this, cellStrings));
+        boardGrid.setAdapter(new MyBoardAdapter(this, cellStrings));
         boardGrid.setOnItemClickListener(onCellClickListener);
 
         taskTitleText = findViewById(R.id.text_task_title);

@@ -11,6 +11,9 @@ import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import io.github.reverince.devtree.view.BoardPreviewActivity;
+import io.github.reverince.devtree.view.MyBoardActivity;
+
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Button boardPreviewBtn;
@@ -49,5 +52,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 
 }

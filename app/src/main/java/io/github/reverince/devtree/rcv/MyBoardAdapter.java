@@ -1,4 +1,4 @@
-package io.github.reverince.devtree;
+package io.github.reverince.devtree.rcv;
 
 import android.content.Context;
 import android.view.View;
@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class BoardAdapter extends BaseAdapter {
+public class MyBoardAdapter extends BaseAdapter {
     private Context mContext;
     private String[] mStrings;
 
-    public BoardAdapter(Context context, String[] strings) {
+    public MyBoardAdapter(Context context, String[] strings) {
         mContext = context;
         mStrings = strings;
     }
