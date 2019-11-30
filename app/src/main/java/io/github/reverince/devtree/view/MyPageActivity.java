@@ -37,6 +37,7 @@ public class MyPageActivity extends AppCompatActivity {
     private TextView mTextNumberOfTaskValue;
     private TextView mTextStackName;
     private List<Post> postList = new ArrayList<>();
+    private List<String> linkList = new ArrayList<>();
     private List<Board> boardList = new ArrayList<>();
     private FirebaseFirestore db;
 
@@ -76,10 +77,10 @@ public class MyPageActivity extends AppCompatActivity {
 
         LinearLayoutManager mVerticalLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         mPostView.setLayoutManager(mVerticalLayoutManager);
-        postList.add(new Post("null","포스트 요약글1"));
-        postList.add(new Post("null","포스트 요약글2"));
-        postList.add(new Post("null","포스트 요약글3"));
-        postList.add(new Post("null","포스트 요약글4"));
+        postList.add(new Post("null","포스트 요약글1", "https://goorm.edu"));
+        postList.add(new Post("null","포스트 요약글2", "https://naver.com"));
+        postList.add(new Post("null","포스트 요약글3", "https://nhn.com"));
+        postList.add(new Post("null","포스트 요약글4", "https://line.me"));
 
         PostAdapter postAdapter = new PostAdapter(this, postList);
         mPostView.setAdapter(postAdapter);

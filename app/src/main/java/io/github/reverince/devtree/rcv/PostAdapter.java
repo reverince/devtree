@@ -1,6 +1,8 @@
 package io.github.reverince.devtree.rcv;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -33,11 +36,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         ImageView imagePost;
         TextView textSummary;
         OnItemClickListener listener;
+        ConstraintLayout constraintLayout;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
             imagePost = itemView.findViewById(R.id.imagePost);
             textSummary = itemView.findViewById(R.id.textSummary);
+            constraintLayout = itemView.findViewById(R.id.constraint_post);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -63,10 +68,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull PostViewHolder holder, final int position) {
 //        holder.imagePost.setImageDrawable(null);
-        holder.textSummary.setText(posts.get(i).getSummary());
+        holder.textSummary.setText(posts.get(position).getSummary());
         holder.setOnItemClickListener(listener);
+
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(posts.get(position).getLink()));
+                view.getContext().startActivity(browserIntent);
+            }
+        });
     }
 
     @Override

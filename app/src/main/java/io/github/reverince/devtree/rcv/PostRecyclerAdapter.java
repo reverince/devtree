@@ -42,7 +42,6 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<PostRecyclerAdapte
     public void onBindViewHolder(RecyclerViewHolder holder, final int position) {
         holder.authorText.setText(mAuthors[position]);
         holder.contentText.setText(mContents[position]);
-        //TODO: 외부 사이트로 링크
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
