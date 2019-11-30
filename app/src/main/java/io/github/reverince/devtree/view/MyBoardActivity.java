@@ -32,8 +32,18 @@ public class MyBoardActivity extends AppCompatActivity {
 	// 테스트용 임시 데이터
 	final String[] cellStrings = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06", "과제 07", "과제 08", "과제 09" };
 	public static boolean[] cellCleared = { false, true, true, true, false, false, false, true, false };
-	final String[] taskTitles = { "과제 01", "과제 02", "과제 03", "과제 04", "과제 05", "과제 06", "과제 07", "과제 08", "과제 09" };
-	final String[] taskContents = { "01 설명", "02 설명", "03 설명", "04 설명", "05 설명", "06 설명", "08 설명", "08 설명", "09 설명" };
+	final String[] taskTitles = { "01. LinearLayout", "02. RelativeLayout", "03. GridLayout",
+			"04. ConstraintLayout", "05. GridLayout", "06. GridLayout",
+			"07. GridLayout", "08. GridView", "09. RecyclerView" };
+	final String[] taskContents = { "LinearLayout의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"RelativeLayout의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"GridLayout의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"GridLayout의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"GridLayout의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"GridLayout의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"GridLayout의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"GridView의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요",
+			"RecyclerView의 중요 속성들을 설명하고 이를 활용한 간단한 예제를 만들어주세요. 결과를 미디엄 등의 블로그로 정리하여 링크로 보내주세요" };
 	public static List<String> postAuthors = new ArrayList<>();
 	public static List<String> postContents = new ArrayList<>();
 	public static List<String> postLinks = new ArrayList<>();
@@ -60,10 +70,10 @@ public class MyBoardActivity extends AppCompatActivity {
 		setTitle("진행 중인 보드 액티비티");  //TODO: 보드 제목 받아오기
 
 		postAuthors.add("홍길동");
-		postContents.add("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ");
+		postContents.add("이렇게 하는 게 맞는지 모르겠네요.");
 		postLinks.add("https://goorm.edu");
 		postAuthors.add("유튜버");
-		postContents.add("the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make");
+		postContents.add("안녕하세요. 저는 이렇게 했습니다. 관심 있으신 분은 읽어주세요.");
 		postLinks.add("https://naver.com");
 		postAuthors.add("라인");
 		postContents.add("a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially");
