@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BoardPreviewActivity extends AppCompatActivity {
+    // 테스트용 임시 데이터
+    final String[] cellStrings = { "aa", "bb", "cc", "dd", "ee", "ff" };
     final String[] titles = { "과제 01", "과제 02", "과제 03" };
     final String[] contents = { "01 ", "02 ", "03 " };
 
@@ -23,16 +25,16 @@ public class BoardPreviewActivity extends AppCompatActivity {
     GridView boardGrid;
     TextView taskTitleText, taskContentText;
 
-    int currentTaskIdx = 0;
+    int currentTaskIdx = 0;  // 지금 선택된 과제 번호
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board_preview);
-        setTitle("보드 미리보기 액티비티");
+        setTitle("보드 미리보기 액티비티");  //TODO: 보드 제목 받아오기
 
         boardGrid = findViewById(R.id.grid_board);
-        boardGrid.setAdapter(new BoardAdapter(this));
+        boardGrid.setAdapter(new BoardAdapter(this, cellStrings));
         boardGrid.setOnItemClickListener(onCellClickListener);
 
         taskTitleText = findViewById(R.id.text_task_title);

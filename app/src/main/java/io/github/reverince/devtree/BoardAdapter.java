@@ -7,17 +7,17 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public class BoardAdapter extends BaseAdapter {
-    private Context context;
+    private Context mContext;
+    private String[] mStrings;
 
-    private String[] strings = { "aa", "bb", "cc", "dd", "ee", "ff" };
-
-    public BoardAdapter(Context c) {
-        context = c;
+    public BoardAdapter(Context context, String[] strings) {
+        mContext = context;
+        mStrings = strings;
     }
 
     @Override
     public int getCount() {
-        return strings.length;
+        return mStrings.length;
     }
     @Override
     public Object getItem(int position) {
@@ -31,12 +31,12 @@ public class BoardAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView;
         if (convertView == null) {
-            textView = new TextView(context);
+            textView = new TextView(mContext);
         }
         else {
             textView = (TextView)convertView;
         }
-        textView.setText(strings[position]);
+        textView.setText(mStrings[position]);
 
         return textView;
     }
