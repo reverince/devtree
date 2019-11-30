@@ -25,7 +25,6 @@ import io.github.reverince.devtree.R;
 import io.github.reverince.devtree.data.Board;
 import io.github.reverince.devtree.data.Post;
 import io.github.reverince.devtree.rcv.BoardAdapter;
-import io.github.reverince.devtree.rcv.MyBoardAdapter;
 import io.github.reverince.devtree.rcv.PostAdapter;
 
 public class MyPageActivity extends AppCompatActivity {
