@@ -14,6 +14,13 @@ class Main2Activity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main2)
 
+		setInProgressBoardAdapter()
+		setIntroduceBoardAdapter()
+
+
+
+	}
+	private fun setInProgressBoardAdapter(){
 		// 진행중인 보드
 		val inProgressBoardViewList = arrayListOf(
 				InProgressBoard("안드로이드 기초보드", "2019.11.29", "클리어한 과제 : 5개", "해야할 과제 : 5개"),
@@ -36,7 +43,9 @@ class Main2Activity : AppCompatActivity() {
 				Toast.makeText(this@Main2Activity, "${list[position]}", Toast.LENGTH_SHORT).show()
 			}
 		})
+	}
 
+	private fun setIntroduceBoardAdapter(){
 		// 코스 소개
 		val introduceBoardList: ArrayList<IntroduceBoard> = arrayListOf(
 				IntroduceBoard(R.drawable.ic_adb_black_24dp, "안드로이드 레이아웃", "여러 레이아웃을 다룸"),
@@ -68,7 +77,6 @@ class Main2Activity : AppCompatActivity() {
 				Toast.makeText(this@Main2Activity, "${list[position]}", Toast.LENGTH_SHORT).show()
 			}
 		})
-
 
 	}
 
