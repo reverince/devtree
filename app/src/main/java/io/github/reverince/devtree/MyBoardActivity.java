@@ -11,9 +11,13 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.GridView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -29,6 +33,8 @@ public class MyBoardActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     GridView boardGrid;
     TextView taskTitleText, taskContentText;
+    ToggleButton postToggle;
+    Button submitBtn;
 
     RecyclerView postRecyclerView;
     RecyclerView.Adapter postRecyclerViewAdapter;
@@ -48,6 +54,11 @@ public class MyBoardActivity extends AppCompatActivity {
 
         taskTitleText = findViewById(R.id.text_task_title);
         taskContentText = findViewById(R.id.text_task_content);
+
+        postToggle = findViewById(R.id.btn_post);
+        postToggle.setOnCheckedChangeListener(onPostToggleCheckedChangeListener);
+        submitBtn = findViewById(R.id.btn_submit);
+        submitBtn.setOnClickListener(onSubmitBtnClickListener);
 
         postRecyclerView = findViewById(R.id.recycler_posts);
         postRecyclerView.setHasFixedSize(false);
@@ -89,6 +100,25 @@ public class MyBoardActivity extends AppCompatActivity {
             catch (ArrayIndexOutOfBoundsException e) {
                 Log.e(this.toString(), "인덱스 초과");
             }
+        }
+    };
+
+    private ToggleButton.OnCheckedChangeListener onPostToggleCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked) {
+                postRecyclerView.setVisibility(View.VISIBLE);
+            }
+            else {
+                postRecyclerView.setVisibility(View.GONE);
+            }
+        }
+    };
+
+    private View.OnClickListener onSubmitBtnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //TODO: 다이얼로그
         }
     };
 
